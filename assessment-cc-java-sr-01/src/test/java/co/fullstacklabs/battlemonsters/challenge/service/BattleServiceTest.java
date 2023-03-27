@@ -72,7 +72,9 @@ public class BattleServiceTest {
     void shouldFailBattleWithInexistentMonster() {
         BattleDTO battleDTO = new BattleDTO();
 
-        assertThrows(ResourceNotFoundException.class,() -> battleService.startBattle(battleDTO));
+        assertThrows(ResourceNotFoundException.class,() -> {
+            battleService.startBattle(battleDTO);
+        });
     }
 
     @Test
